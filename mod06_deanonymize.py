@@ -26,7 +26,7 @@ def link_records(anon_df, aux_df):
         on=shared,
         how='inner',
         validate='1:1'
-    ).loc[:, ['anon_id', 'name']]
+    ).loc[:, ['anon_id', 'name']].rename(columns={'name': 'matched_name'})
 
 
 def deanonymization_rate(matches_df, anon_df):
